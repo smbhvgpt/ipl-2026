@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+  background: #0B0F19;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: #E5E7EB;
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(167, 139, 250, 0.08), transparent 60%),
+    radial-gradient(900px 700px at -10% 20%, rgba(34, 211, 238, 0.07), transparent 60%),
+    #0B0F19;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: #0F1422; }
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #252F47, #1A2236);
+  border-radius: 6px;
+  border: 2px solid #0F1422;
+}
+*::-webkit-scrollbar-thumb:hover { background: #2E3A56; }
+
+/* Grid pattern background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(26,34,54,0.72), rgba(15,20,34,0.72));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.neon-border {
+  position: relative;
+}
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34,211,238,0.5), rgba(167,139,250,0.4), rgba(244,114,182,0.3));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(34,211,238,0.12), transparent);
+  animation: scan 3s linear infinite;
+}
+
+/* Text gradients */
+.text-gradient {
+  background: linear-gradient(120deg, #A78BFA, #22D3EE 50%, #F472B6);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+/* Soft hover lift */
+.lift {
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), box-shadow 220ms ease;
+}
+.lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Tiny utility helpers */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+}
+
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Zoom controls for the tournament map */
+.zoom-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: all 180ms ease;
+  cursor: pointer;
+}
+.zoom-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Shadow glow for neon accented elements */
+.shadow-neon {
+  box-shadow: 0 0 32px rgba(167, 139, 250, 0.15);
+}
+
