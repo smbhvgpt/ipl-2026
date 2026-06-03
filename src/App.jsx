@@ -154,10 +154,10 @@ function MiniBracket({ onJump }) {
       className="w-full text-left rounded-xl glass neon-border p-4 lift relative overflow-hidden group"
     >
       <span className="scanline" />
-      <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">Live phase</div>
-      <div className="font-display font-semibold text-lg mt-0.5">Playoffs in motion</div>
+      <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">Champions</div>
+      <div className="font-display font-semibold text-lg mt-0.5">RCB lift IPL 2026</div>
       <p className="text-sm text-white/55 mt-1 leading-relaxed">
-        Q2 (GT vs RR) is 24 hours out. RCB are already in the Final. Tap to open the bracket.
+        RCB 207/5 beat GT 188/9 by 19 runs in Ahmedabad. First title in 19 seasons. Tap to relive the bracket.
       </p>
       <div className="mt-3 text-[11px] mono uppercase tracking-[0.22em] text-neon-cyan group-hover:translate-x-1 transition">
         Open Playoff Tree →

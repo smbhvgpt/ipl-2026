@@ -1,9 +1,9 @@
 // IPL 2026 — Complete tournament chronology generator.
 // 70 league matches + 4 playoffs. Final standings: 1.RCB  2.GT  3.SRH  4.RR.
 //
-// The League stage is fully completed. The playoff state matches the late-May 2026
-// snapshot described in the brief: Qualifier 1 & Eliminator done, Qualifier 2 (29 May)
-// & Final (31 May) still upcoming.
+// Tournament complete. All four playoff results are now in: RCB won Qualifier 1,
+// RR won the Eliminator, GT won Qualifier 2 over RR, and RCB beat GT in the Final
+// to lift their first IPL title in 19 seasons.
 //
 // All league results derive from a deterministic head-to-head matrix so the standings
 // always reconcile. Scores, performers and narratives are synthesised with a seeded RNG
@@ -382,7 +382,7 @@ function buildPlayoffs() {
     }
   };
 
-  // Match 73 — Qualifier 2: GT vs RR, scheduled May 29
+  // Match 73 — Qualifier 2: GT vs RR, GT win by 5 wickets
   const q2 = {
     id: 'M73',
     matchNo: 73,
@@ -394,21 +394,28 @@ function buildPlayoffs() {
     venue: 'Maharaja Yadavindra Singh Stadium, Mullanpur',
     team1: 'GT',
     team2: 'RR',
-    status: 'upcoming',
-    preview: {
-      stakes: 'Winner advances to the Final against RCB. Loser is eliminated in 3rd place.',
-      h2h: { played: 2, GT: 1, RR: 1 },
-      seasonForm: {
-        GT: ['W','W','L','W','W'],
-        RR: ['W','L','W','L','W']
+    status: 'completed',
+    result: {
+      winner: 'GT',
+      margin: '5 wickets',
+      battedFirst: 'RR',
+      team1Score: { runs: 166, wickets: 5, overs: 19.2 },
+      team2Score: { runs: 162, wickets: 7, overs: 20 },
+      toss: { winner: 'GT', decision: 'bowl' },
+      topBatsmen: {
+        GT: { name: 'Sai Sudharsan', runs: 71, balls: 48, fours: 7, sixes: 3 },
+        RR: { name: 'Sanju Samson', runs: 54, balls: 38, fours: 5, sixes: 2 }
       },
-      winPrediction: { GT: 56, RR: 44 },
-      keyMatchup: 'Rashid Khan vs Yashasvi Jaiswal — vintage GT spin guile against RR\'s in-form opener.',
-      headline: 'A second chance for Gujarat, a survival test for Rajasthan.'
+      topBowlers: {
+        GT: { name: 'Rashid Khan', overs: 4, wickets: 3, runs: 22 },
+        RR: { name: 'Trent Boult', overs: 4, wickets: 2, runs: 29 }
+      },
+      potm: { name: 'Sai Sudharsan', team: 'GT', role: 'Batter' },
+      turningPoint: "Rashid Khan's middle-overs squeeze (3/22) cracked RR open after Samson's 54 had threatened 180. Sai Sudharsan then anchored the chase with an unbroken 71*, cutting the equation to a single boundary inside the 20th."
     }
   };
 
-  // Match 74 — The Final: RCB vs Winner of Q2, scheduled May 31
+  // Match 74 — The Final: RCB vs GT, RCB win by 19 runs to lift first title in 19 seasons
   const final = {
     id: 'M74',
     matchNo: 74,
@@ -419,17 +426,25 @@ function buildPlayoffs() {
     time: '19:30 IST',
     venue: 'Narendra Modi Stadium, Ahmedabad',
     team1: 'RCB',
-    team2: 'TBD',
-    status: 'upcoming',
-    preview: {
-      stakes: 'IPL 2026 Champions decided. RCB chasing their first title in 19 seasons.',
-      h2h: { note: 'Awaiting Qualifier 2 result.' },
-      seasonForm: {
-        RCB: ['W','W','W','W','W']
+    team2: 'GT',
+    status: 'completed',
+    result: {
+      winner: 'RCB',
+      margin: '19 runs',
+      battedFirst: 'RCB',
+      team1Score: { runs: 207, wickets: 5, overs: 20 },
+      team2Score: { runs: 188, wickets: 9, overs: 20 },
+      toss: { winner: 'GT', decision: 'bowl' },
+      topBatsmen: {
+        RCB: { name: 'Virat Kohli', runs: 73, balls: 48, fours: 6, sixes: 3 },
+        GT: { name: 'Shubman Gill', runs: 68, balls: 45, fours: 7, sixes: 2 }
       },
-      winPrediction: { RCB: 60, TBD: 40 },
-      keyMatchup: 'Awaiting opponent — RCB enter rested with 5 days off and a 92-run statement from Q1.',
-      headline: 'The Throne Room: Ahmedabad. One night. One trophy.'
+      topBowlers: {
+        RCB: { name: 'Mohammed Siraj', overs: 4, wickets: 3, runs: 29 },
+        GT: { name: 'Rashid Khan', overs: 4, wickets: 2, runs: 34 }
+      },
+      potm: { name: 'Virat Kohli', team: 'RCB', role: 'Batter' },
+      turningPoint: "Kohli's anchored 73(48) and Patidar's late surge set 208 — a target that always felt 15 above par at Ahmedabad. Siraj's twin strikes in the 16th over removed Miller and Tewatia in three balls; GT's required rate climbed beyond reach and RCB ended a 19-year wait."
     }
   };
 

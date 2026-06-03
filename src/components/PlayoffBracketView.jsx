@@ -18,7 +18,7 @@ export default function PlayoffBracketView({ playoffs, onSelectMatch, teamFilter
         <div>
           <div className="text-[10px] tracking-[0.32em] mono text-white/40 uppercase">Knockout Theatre</div>
           <h2 className="font-display font-semibold text-2xl text-gradient">Playoff Tree</h2>
-          <p className="text-sm text-white/55 mt-1">Two games down · Two to go. Lines show how teams progress through rounds.</p>
+          <p className="text-sm text-white/55 mt-1">All four playoffs done. RCB lift the trophy after a 19-year wait. Lines show how teams progressed through rounds.</p>
         </div>
         <div className="hidden md:flex items-center gap-4 text-[10px] tracking-[0.22em] mono text-white/45 uppercase">
           <span className="inline-flex items-center gap-1"><span className="dot bg-emerald-400" /> Completed</span>
@@ -216,15 +216,15 @@ function FlowLegend({ playoffs }) {
   return (
     <div className="mt-8 grid md:grid-cols-2 gap-3 text-[12px]">
       <div className="rounded-lg glass px-3 py-2.5">
-        <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">Done</div>
+        <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">Road to Ahmedabad</div>
         <div className="mt-1 text-white/75">
-          RCB stamped Q1 with a 92-run statement. SRH crashed out 4th after RR's Boult-led 47-run rout in the Eliminator.
+          RCB stamped Q1 with a 92-run statement. RR's Boult-led 47-run rout ended SRH in the Eliminator. GT then edged RR by 5 in Mullanpur to set up the rematch.
         </div>
       </div>
       <div className="rounded-lg glass px-3 py-2.5">
-        <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">Next 96 Hours</div>
+        <div className="text-[10px] tracking-[0.22em] mono text-white/40 uppercase">The Trophy</div>
         <div className="mt-1 text-white/75">
-          GT vs RR (Mullanpur, 29 May) decides RCB's Final opponent. Then Ahmedabad, 31 May — one night, one trophy.
+          RCB 207/5 (Kohli 73) edged GT 188/9 by 19 runs in Ahmedabad. Siraj's 16th-over twin-strike sealed a first IPL title after a 19-year wait.
         </div>
       </div>
     </div>
